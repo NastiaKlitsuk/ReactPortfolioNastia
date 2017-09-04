@@ -1,12 +1,15 @@
 import React, { Component } from 'react';
 import Share from '../share';
 import './Navigator.css';
+import Menu from '../menu';
 
 class Navigator extends Component {
   render() {
     return (
       <div className="Navbar">
-          <Share/>
+        <img className="Logo" src={require('./images/nature.png')} alt="Nature" />
+        <Menu />
+        <Share />
       </div>
     );
   }

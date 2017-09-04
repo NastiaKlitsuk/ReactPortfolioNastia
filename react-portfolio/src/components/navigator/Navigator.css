@@ -1,7 +1,15 @@
 .Navbar
 {
-    background-color: aqua;
-    margin: 0 0 15 0;
     width: 20%;
-    height: 800px;
+    background-color: aquamarine; 
+    float: left;
+    margin: 5px;
+}
+
+.Logo
+{
+    position: relative;
+    margin: 23% 31% 15% 31%;
+    max-width:50%;
+    max-height:50%;
 }
