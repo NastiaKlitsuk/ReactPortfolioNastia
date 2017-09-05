@@ -1,4 +1,6 @@
 .ContentArea{
     width: 77%;
     background-color: #F6F6F6;
+    margin: 5px;
+    float: left;
 }
