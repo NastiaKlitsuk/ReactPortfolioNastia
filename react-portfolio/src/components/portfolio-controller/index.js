@@ -20,7 +20,8 @@ class PortfolioController extends Component {
             <div className="PortfolioContainer">
                 {
                     this.state.items.map((item, idx) => {
-                        return <PortfolioItem key={idx} title={item.title} description={item.description} imageUrl={item.imageUrl}/>
+                        return <PortfolioItem key={idx} title={item.title} description={item.description} imageUrl={item.imageUrl} 
+                                onEditPortfolioItem={this.props.onEditPortfolioItem.bind(this)}/>
                     })
                 }
             </div>

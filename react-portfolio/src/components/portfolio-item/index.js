@@ -11,7 +11,8 @@ class PortfolioItem extends Component {
         //alert('PortfolioItem render');
 
         return (
-            <div className="PortfolioItemContainer">
+            <div className="PortfolioItemContainer" 
+                 onClick={()=>{this.props.onEditPortfolioItem(this.props.title, this.props.imageUrl, this.props.description)}}>
                 <img className="PortfolioImage" src={this.props.imageUrl} />
                 <div className="Seperator" />
                 <h3>{this.props.title}</h3>
@@ -23,7 +24,8 @@ class PortfolioItem extends Component {
 PortfolioItem.propTypes = {
     title: PropTypes.string.isRequired,
     description: PropTypes.string,
-    imageUrl: PropTypes.string.isRequired
+    imageUrl: PropTypes.string.isRequired,
+    onEditPortfolioItem: PropTypes.func.isRequired
 }
 
 export default PortfolioItem;

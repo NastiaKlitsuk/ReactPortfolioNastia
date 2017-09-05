@@ -32,20 +32,27 @@ class PortfolioItemForm extends Component {
             <form onSubmit={this.onSubmit}>
                 <div className="FormContainer">
                 <div className="FormStyleHeading">Insert new protfolio details</div>
+
                 <label htmlFor="title">Title:</label>
-                <input id="title" name="title" type="text" value={this.state.title} onChange={this.onChange} />
+                <input id="title" name="title" type="text" value={this.props.title} onChange={this.onChange} />
 
                 <label htmlFor="imageUrl">Image Url:</label>
-                <input id="imageUrl" name="imageUrl" type="text" value={this.state.imageUrl} onChange={this.onChange} />
+                <input id="imageUrl" name="imageUrl" type="text" value={this.props.imageUrl} onChange={this.onChange} />
 
                 <label>Description:</label>
-                <textarea  name="description" defaultValue={this.state.description} onChange={this.onChange} />
+                <textarea  name="description" defaultValue={this.props.description} onChange={this.onChange} />
                  
                 <input type="submit" value="Submit" />
                 </div>
             </form>
         );
     }
+}
+
+PortfolioItemForm.propTypes = {
+    title: PropTypes.string.isRequired,
+    description: PropTypes.string,
+    imageUrl: PropTypes.string.isRequired
 }
 
 export default PortfolioItemForm;
