@@ -3,11 +3,18 @@ import './PortfolioItem.css';
 import PropTypes from 'prop-types';
 
 class PortfolioItem extends Component {
+    constructor(props) {
+        super(props);
+    }
+
     render() {
+        //alert('PortfolioItem render');
+
         return (
             <div className="PortfolioItemContainer">
+                <img className="PortfolioImage" src={this.props.imageUrl} />
+                <div className="Seperator" />
                 <h3>{this.props.title}</h3>
-                <img src={this.props.imageUrl} />
             </div>
         );
     }

@@ -1,0 +1,33 @@
+.FormStyleHeading{
+    font-weight: bold;
+    font-style: italic;
+    border-bottom: 2px solid #ddd;
+    margin-bottom: 20px;
+    font-size: 15px;
+    padding-bottom: 3px;
+}
+
+.FormContainer{
+    padding: 50px 12px 0px 0px;
+}
+
+label{
+    display: block;
+    margin: 15px 0px 0px 0px;
+    font-weight: bold;
+}
+
+input[type="text"]{
+    width: 15%;
+}
+
+textarea{
+    width: 35%;
+    height: 150px;
+}
+
+input[type=submit]{
+    border: none;
+    padding: 8px 15px 8px 15px;
+    display: block;
+}

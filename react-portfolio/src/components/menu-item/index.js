@@ -3,18 +3,11 @@ import './MenuItem.css';
 import PropTypes from 'prop-types';
 
 class MenuItem extends Component {
-    constructor(props) {
-        super(props);
-        this.onMenuClick = this.onMenuClick.bind(this);
-    }
-
-    onMenuClick() {
-        alert(this.props.title);
-    }
-
     render() {
+        //alert('in menu-item render');
+
         return (
-            <a onClick={this.onMenuClick}>
+            <a onClick={()=> {this.props.onSelected(this.props.id)}}>
                 {this.props.title}
             </a>
         );
@@ -22,7 +15,9 @@ class MenuItem extends Component {
 }
 
 MenuItem.propTypes = {
-  title: PropTypes.string.isRequired
+    id: PropTypes.number.isRequired,
+    title: PropTypes.string.isRequired,
+    onSelected: PropTypes.func.isRequired
 }
 
 export default MenuItem;

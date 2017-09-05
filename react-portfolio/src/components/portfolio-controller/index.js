@@ -8,12 +8,14 @@ class PortfolioController extends Component {
         super(props);
         this.state = {
             items: [
-                {title: "Garda lake.", description: "Garda lake.", imageUrl: "images/gardalake.jpg"}
+                {title: "Garda lake.", description: "GARDA LAKE.", imageUrl: "images/gardalake.jpg"}
             ]
         }
+        //alert('PortfolioController ctor');
     }
 
     render() {
+        //alert('PortfolioController render');
         return (
             <div className="PortfolioContainer">
                 {
