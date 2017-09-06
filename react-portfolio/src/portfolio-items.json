@@ -1,10 +1,52 @@
-{"items": 
-[
-    {
-    "id": 1,
-    "title": "Garda lake.", 
-    "description": "GARDA LAKE.", 
-    "imageUrl": "images/gardalake.jpg"
-    }
-]
+{
+    "items": [
+        {
+            "id": 1,
+            "title": "Garda lake",
+            "description": "Amazing lake in Italy.",
+            "imageUrl": "images/gardalake.jpg"
+        },
+        {
+            "id": 2,
+            "title": "Haltstatt",
+            "description": "Breathtaking...",
+            "imageUrl": "images/hallstatt.jpg"
+        },
+        {
+            "id": 3,
+            "title": "Lacu-Rosu",
+            "description": "A beutiful lake in mountains. Green forest around with little vilages.",
+            "imageUrl": "images/lacu-rosu.jpg"
+        },
+        {
+            "id": 4,
+            "title": "Poiana-Brasov",
+            "description": "A ski resourt in the winter, a beautiful footpathes in the summer.",
+            "imageUrl": "images/lacu-rosu.jpg"
+        },
+        {
+            "id": 5,
+            "title": "Hamburg",
+            "description": "A beutiful city in north Germany.",
+            "imageUrl": "images/hamburg.jpg"
+        },
+        {
+            "id": 6,
+            "title": "Black Forest - Seebach",
+            "description": "Black Forest - Seebach.",
+            "imageUrl": "images/seebach.jpg"
+        },
+        {
+            "id": 7,
+            "title": "Nizza",
+            "description": "Nice, capital of the Alpes-Maritimes department on the French Riviera, sits on the pebbly shores of the Baie des Anges. Founded by the Greeks and later a retreat for 19th-century European elite, the city has also long attracted artists. Former resident Henri Matisse is honored with a career-spanning collection of paintings at Musée Matisse. Musée Marc Chagall features some of its namesake's major religious works.",
+            "imageUrl": "images/nizza.jpg"
+        },
+        {
+            "id": 8,
+            "title": "Kiel",
+            "description": "Kiel is the capital and most populous city in the northern German state of Schleswig-Holstein, with a population of 240,832. Kiel lies approximately 90 kilometres north of Hamburg.",
+            "imageUrl": "images/kiel.jpg"
+        }
+    ]
 }

@@ -1,8 +1,12 @@
-.shareContainer{
+.ShareContainer{
     width: 82px;
     margin-top: 129%;
     position: relative;
     margin-left: 33%;
+}
+
+.ShareContainer a{
+    float: left;
 }
 
 button{
