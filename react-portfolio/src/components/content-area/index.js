@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import PortfolioController from '../portfolio-controller';
 import PortfolioItemForm from '../portfolio-item-form';
+import About from '../about';
 import './ContentArea.css';
 
 class ContentArea extends Component {
@@ -14,10 +15,13 @@ class ContentArea extends Component {
             view = <PortfolioController onEditPortfolioItem={this.props.onEditPortfolioItem.bind(this)}/>;
         }
         else if (this.props.displayedMenuItemName === 'Add new portfolio item'){
+            view = <PortfolioItemForm title='' imageUrl='' description=''/>;                        
+        }
+        else if (this.props.displayedMenuItemName === 'Edit portfolio item'){
             view = <PortfolioItemForm title={this.props.title} imageUrl={this.props.imageUrl} description={this.props.description}/>;            
         }
         else if (this.props.displayedMenuItemName === 'About'){
-            view = <div>About</div>
+            view = <About/>;
         }
 
         return (

@@ -31,7 +31,7 @@ class PortfolioItemForm extends Component {
         return (
             <form onSubmit={this.onSubmit}>
                 <div className="FormContainer">
-                <div className="FormStyleHeading">Insert new protfolio details</div>
+                <div className="FormHeader">Insert new protfolio details</div>
 
                 <label htmlFor="title">Title:</label>
                 <input id="title" name="title" type="text" value={this.props.title} onChange={this.onChange} />

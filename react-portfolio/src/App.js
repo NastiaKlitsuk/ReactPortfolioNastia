@@ -29,7 +29,7 @@ class App extends Component {
      alert(itemTitle);
      alert(itemImageUrl);
      alert(itemDescription);
-     this.setState({displayedMenuItemName: 'Add new portfolio item',
+     this.setState({displayedMenuItemName: 'Edit portfolio item',
        portfolioItemToEdit:
         {
           title: itemTitle,
