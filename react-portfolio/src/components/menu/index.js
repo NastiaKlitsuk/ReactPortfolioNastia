@@ -16,24 +16,14 @@ class Menu extends Component {
     }
 
     onMenuSelected(selectedMenuId) {
-        //alert(`onMenuSelected. length ${this.state.menuItems.length}`);
         this.setState({ menuItems: [] });
         let newState = [];
         for (let menuIndex = 0; menuIndex < this.state.menuItems.length; menuIndex++) {
-            // let menuItem = Object.assign({}, this.state.menuItems[menuIndex]);
-            // if (menuIndex === selectedMenuId) {
-            //     menuItem.displayed = true;
-            // }
-            // else{
-            //     menuItem.displayed = false;                
-            // }
-
             const updatedMenuItem = (this.state.menuItems[menuIndex].id === selectedMenuId) ? 
                                             {...this.state.menuItems[menuIndex], displayed: true}:
                                             {...this.state.menuItems[menuIndex], displayed: false};
 
             newState.push(updatedMenuItem);
-            //alert(newState.length);
         }
 
         this.props.onMenuChanged(this.state.menuItems[selectedMenuId-1].title);
@@ -42,8 +32,6 @@ class Menu extends Component {
     }
 
     render() {
-        //alert('in menu render');
-
         return (
             <div>
                 {
@@ -54,10 +42,6 @@ class Menu extends Component {
             </div>
         );
     }
-}
-
-Menu.propTypes = {
-    onMenuChanged: PropTypes.func.isRequired
 }
 
 export default Menu;

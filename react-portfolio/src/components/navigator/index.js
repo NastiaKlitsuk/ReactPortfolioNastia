@@ -6,7 +6,6 @@ import PropTypes from 'prop-types';
 
 class Navigator extends Component {
   render() {
-    //alert('in navigator render');
     return (
       <div className="Navbar">
         <img className="Logo" src={require('./images/nature.png')} alt="Nature" />

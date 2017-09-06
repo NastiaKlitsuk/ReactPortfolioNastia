@@ -6,13 +6,12 @@ class PortfolioItemForm extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            title: '',
-            description: '',
-            imageUrl: ''
+            title: this.props.title,
+            description: this.props.description,
+            imageUrl: this.props.imageUrl
         }
 
         this.onChange = this.onChange.bind(this);
-        this.onSubmit = this.onSubmit.bind(this);
     }
 
     onChange(event) {
@@ -22,25 +21,24 @@ class PortfolioItemForm extends Component {
         this.setState({ [name]: value });
     }
 
-    onSubmit(event) {
-        alert('A name was submitted: ' + this.state.value);
-        event.preventDefault();
-    }
-
     render() {
         return (
-            <form onSubmit={this.onSubmit}>
+            <form onSubmit={(event)=>{this.props.onChangedProtfolioItem(event,
+                                                              this.props.id,
+                                                              this.state.title, 
+                                                              this.state.imageUrl, 
+                                                              this.state.description)}}>
                 <div className="FormContainer">
                 <div className="FormHeader">Insert new protfolio details</div>
 
                 <label htmlFor="title">Title:</label>
-                <input id="title" name="title" type="text" value={this.props.title} onChange={this.onChange} />
+                <input id="title" name="title" type="text" value={this.state.title} onChange={this.onChange} />
 
                 <label htmlFor="imageUrl">Image Url:</label>
-                <input id="imageUrl" name="imageUrl" type="text" value={this.props.imageUrl} onChange={this.onChange} />
+                <input id="imageUrl" name="imageUrl" type="text" value={this.state.imageUrl} onChange={this.onChange} />
 
                 <label>Description:</label>
-                <textarea  name="description" defaultValue={this.props.description} onChange={this.onChange} />
+                <textarea  name="description" defaultValue={this.state.description} onChange={this.onChange} />
                  
                 <input type="submit" value="Submit" />
                 </div>

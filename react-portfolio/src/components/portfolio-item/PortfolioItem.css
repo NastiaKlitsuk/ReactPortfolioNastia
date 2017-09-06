@@ -20,3 +20,32 @@ h3{
   width: 150px;
   margin: 0 auto;
 }
+
+.Remove{
+    position: relative; 
+    z-index: 1;
+    background-image: url("./images/trash.png");
+    width: 30px;
+    height: 30px;
+    bottom: -19px;
+    display: none;
+}
+
+.Edit{
+    position: relative; 
+    float: left;
+    z-index: 1;
+    background-image: url("./images/edit.png");
+    width: 30px;
+    height: 30px;
+    display: none;
+    bottom: 11px;
+    right: -31px;
+}
+
+div.PortfolioItemContainer:hover button.Remove{
+    display: block;
+}
+div.PortfolioItemContainer:hover button.Edit{
+    display: inline;
+}

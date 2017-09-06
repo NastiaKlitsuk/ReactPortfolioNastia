@@ -1,3 +1,5 @@
+import items from './portfolio-items.json';
+
 class DataManager{  
     instance = null;
     constructor() {
@@ -9,6 +11,8 @@ class DataManager{
       }
 
       getProtfolioItems(){
-        let path = "protfolio-items.json";
+        return {portfolioItems: items};
     }
 }
+
+export default DataManager;

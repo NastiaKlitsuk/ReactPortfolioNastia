@@ -4,8 +4,6 @@ import PropTypes from 'prop-types';
 
 class MenuItem extends Component {
     render() {
-        //alert('in menu-item render');
-
         return (
             <a onClick={()=> {this.props.onSelected(this.props.id)}}>
                 {this.props.title}
