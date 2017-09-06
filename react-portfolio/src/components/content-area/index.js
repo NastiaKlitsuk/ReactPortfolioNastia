@@ -6,42 +6,47 @@ import About from '../about';
 import './ContentArea.css';
 import PortfolioItemDisplay from '../portfolio-item-display';
 
-class ContentArea extends Component {
-    constructor(props) {
-        super(props);
+const ContentArea = (props) => {
+    let view = {};
+    if (props.displayedMenuItemName === 'Portfolio') {
+        view = <PortfolioController data={props.data}
+            onEditPortfolioItem={props.onEditPortfolioItem}
+            onRemovePortfolioItem={props.onRemovePortfolioItem}
+            onDisplayPortfolioItem={props.onDisplayPortfolioItem} />;
+    }
+    else if ((props.displayedMenuItemName === 'Add new portfolio item') ||
+        (props.displayedMenuItemName === 'Edit portfolio item')) {
+        view = <PortfolioItemForm id={props.id}
+            title={props.title}
+            imageUrl={props.imageUrl}
+            description={props.description}
+            onSavedProtfolioItem={props.onSavedProtfolioItem} />;
+    }
+    else if (props.displayedMenuItemName === 'About') {
+        view = <About />;
+    }
+    else if (props.displayedMenuItemName === 'Display Portfolio Item') {
+        view = <PortfolioItemDisplay title={props.title}
+            imageUrl={props.imageUrl}
+            description={props.description} />;
     }
 
-    render() {
-        let view = {};
-        if (this.props.displayedMenuItemName === 'Portfolio') {
-            view = <PortfolioController data={this.props.data}
-                onEditPortfolioItem={this.props.onEditPortfolioItem.bind(this)}
-                onRemovePortfolioItem={this.props.onRemovePortfolioItem.bind(this)} 
-                onDisplayPortfolioItem={this.props.onDisplayPortfolioItem}/>;
-        }
-        else if ((this.props.displayedMenuItemName === 'Add new portfolio item') ||
-            (this.props.displayedMenuItemName === 'Edit portfolio item')) {
-            view = <PortfolioItemForm id={this.props.id}
-                title={this.props.title}
-                imageUrl={this.props.imageUrl}
-                description={this.props.description}
-                onSavedProtfolioItem={this.props.onSavedProtfolioItem.bind(this)} />;
-        }
-        else if (this.props.displayedMenuItemName === 'About') {
-            view = <About />;
-        }
-        else if (this.props.displayedMenuItemName === 'Display Portfolio Item') {
-            view = <PortfolioItemDisplay title={this.props.title}
-                imageUrl={this.props.imageUrl}
-                description={this.props.description}  />;
-        }
+    return (
+        <div className="ContentArea">
+            {view}
+        </div>
+    );
+}
 
-        return (
-            <div className="ContentArea">
-                {view}
-            </div>
-        );
-    }
+ContentArea.propTypes = {
+    id: PropTypes.number.isRequired,
+    title: PropTypes.string.isRequired,
+    description: PropTypes.string,
+    imageUrl: PropTypes.string.isRequired,
+    onRemovePortfolioItem: PropTypes.func.isRequired,
+    onEditPortfolioItem: PropTypes.func.isRequired,
+    onDisplayPortfolioItem: PropTypes.func.isRequired,
+    onSavedProtfolioItem: PropTypes.func.isRequired
 }
 
 export default ContentArea;

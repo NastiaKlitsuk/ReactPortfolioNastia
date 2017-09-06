@@ -2,18 +2,15 @@ import React, { Component } from 'react';
 import './MenuItem.css';
 import PropTypes from 'prop-types';
 
-class MenuItem extends Component {
-    render() {
-        return (
-            <a onClick={(event)=> {this.props.onMenuChanged(event, this.props.title)}}>
-                {this.props.title}
-            </a>
-        );
-    }
+const MenuItem = (props) => {
+    return (
+        <a onClick={(event) => { props.onMenuChanged(event, props.title) }}>
+            {props.title}
+        </a>
+    );
 }
 
 MenuItem.propTypes = {
-    id: PropTypes.number.isRequired,
     title: PropTypes.string.isRequired,
     onMenuChanged: PropTypes.func.isRequired
 }

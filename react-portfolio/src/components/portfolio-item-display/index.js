@@ -2,18 +2,16 @@ import React, { Component } from 'react';
 import './PortfolioItemDisplay.css';
 import PropTypes from 'prop-types';
 
-class PortfolioItemDisplay extends Component {
-    render() {
-        return (
-            <div className="DisplayContainer">
-                <h4 className="DisplayContainer">{this.props.title}</h4>
-                <p>this.props.description</p>
-                <div className="PortfolioImage">
-                    <img src={this.props.imageUrl} />
-                </div>
+const PortfolioItemDisplay = (props) => {
+    return (
+        <div className="DisplayContainer">
+            <h4 className="DisplayContainer">{props.title}</h4>
+            <p>props.description</p>
+            <div className="PortfolioImage">
+                <img src={props.imageUrl} />
             </div>
-        );
-    }
+        </div>
+    );
 }
 
 PortfolioItemDisplay.propTypes = {
