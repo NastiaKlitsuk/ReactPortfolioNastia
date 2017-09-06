@@ -28,7 +28,8 @@ const ContentArea = (props) => {
     else if (props.displayedMenuItemName === 'Display Portfolio Item') {
         view = <PortfolioItemDisplay title={props.title}
             imageUrl={props.imageUrl}
-            description={props.description} />;
+            description={props.description} 
+            onPortfolioItemDisplayClosed={props.onPortfolioItemDisplayClosed}/>;
     }
 
     return (
@@ -46,7 +47,8 @@ ContentArea.propTypes = {
     onRemovePortfolioItem: PropTypes.func.isRequired,
     onEditPortfolioItem: PropTypes.func.isRequired,
     onDisplayPortfolioItem: PropTypes.func.isRequired,
-    onSavedProtfolioItem: PropTypes.func.isRequired
+    onSavedProtfolioItem: PropTypes.func.isRequired,
+    onPortfolioItemDisplayClosed: PropTypes.func.isRequired
 }
 
 export default ContentArea;

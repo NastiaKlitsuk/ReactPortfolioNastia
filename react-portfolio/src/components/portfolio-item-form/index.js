@@ -24,24 +24,26 @@ class PortfolioItemForm extends Component {
 
     render() {
         return (
-            <form onSubmit={(event)=>{this.props.onSavedProtfolioItem(event,
-                                                              this.props.id,
-                                                              this.state.title, 
-                                                              this.state.imageUrl, 
-                                                              this.state.description)}}>
+            <form onSubmit={(event) => {
+                this.props.onSavedProtfolioItem(event,
+                    this.props.id,
+                    this.state.title,
+                    this.state.imageUrl,
+                    this.state.description)
+            }}>
                 <div className="FormContainer">
-                <div className="FormHeader">Insert new protfolio details</div>
+                    <div className="FormHeader">Insert new protfolio details</div>
 
-                <label htmlFor="title">Title:</label>
-                <input id="title" name="title" type="text" value={this.state.title} onChange={this.onChange} required/>
+                    <label htmlFor="title">Title:</label>
+                    <input id="title" name="title" type="text" value={this.state.title} onChange={this.onChange} required />
 
-                <label htmlFor="imageUrl">Image Url:</label>
-                <input id="imageUrl" name="imageUrl" type="text" value={this.state.imageUrl} onChange={this.onChange} required/>
+                    <label htmlFor="imageUrl">Image Url:</label>
+                    <input id="imageUrl" name="imageUrl" type="text" value={this.state.imageUrl} onChange={this.onChange} required />
 
-                <label>Description:</label>
-                <textarea  name="description" defaultValue={this.state.description} onChange={this.onChange} />
-                 
-                <input type="submit" value="Submit" />
+                    <label>Description:</label>
+                    <textarea name="description" defaultValue={this.state.description} onChange={this.onChange} />
+
+                    <input type="submit" value="Submit" />
                 </div>
             </form>
         );

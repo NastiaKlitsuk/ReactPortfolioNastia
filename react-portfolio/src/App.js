@@ -23,6 +23,7 @@ class App extends Component {
     this.onRemovePortfolioItem = this.onRemovePortfolioItem.bind(this);
     this.onSavedProtfolioItem = this.onSavedProtfolioItem.bind(this);
     this.onDisplayPortfolioItem = this.onDisplayPortfolioItem.bind(this);
+    this.onPortfolioItemDisplayClosed = this.onPortfolioItemDisplayClosed.bind(this);
   }
 
   onDisplayPortfolioItem(event, idx, itemTitle, itemImageUrl, itemDescription) {
@@ -39,6 +40,19 @@ class App extends Component {
     });
   }
 
+  onPortfolioItemDisplayClosed() {
+    this.setState({
+      displayedMenuItemName: 'Portfolio',
+      portfolioItemToEdit:
+      {
+        id: -1,
+        title: '',
+        description: '',
+        imageUrl: ''
+      }
+    });
+  }
+
   onMenuChanged(event, selectedMenuItemName) {
     event.preventDefault();
     this.setState({
@@ -48,7 +62,7 @@ class App extends Component {
         title: '',
         description: '',
         imageUrl: ''
-      },
+      }
     });
   }
 
@@ -69,7 +83,7 @@ class App extends Component {
 
   onRemovePortfolioItem(event, idx) {
     event.preventDefault();
-    event.stopPropagation();    
+    event.stopPropagation();
     const positionItemToRemove = _.findIndex(this.state.portfolioItems, { id: idx });
     this.setState({
       portfolioItems: [...this.state.portfolioItems.slice(0, positionItemToRemove),
@@ -104,7 +118,13 @@ class App extends Component {
 
     this.setState({
       displayedMenuItemName: 'Portfolio',
-      portfolioItems: newPortfolioItems
+      portfolioItems: newPortfolioItems,
+      portfolioItemToEdit: {
+        id: -1,
+        title: '',
+        description: '',
+        imageUrl: ''
+      }
     });
   }
 
@@ -118,6 +138,7 @@ class App extends Component {
           onRemovePortfolioItem={this.onRemovePortfolioItem.bind(this)}
           onSavedProtfolioItem={this.onSavedProtfolioItem.bind(this)}
           onDisplayPortfolioItem={this.onDisplayPortfolioItem.bind(this)}
+          onPortfolioItemDisplayClosed={this.onPortfolioItemDisplayClosed.bind(this)}
           id={this.state.portfolioItemToEdit.id}
           title={this.state.portfolioItemToEdit.title}
           imageUrl={this.state.portfolioItemToEdit.imageUrl}

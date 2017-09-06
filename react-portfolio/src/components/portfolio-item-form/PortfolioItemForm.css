@@ -11,22 +11,22 @@
     padding: 50px 12px 0px 0px;
 }
 
-label{
+.FormContainer label{
     display: block;
     margin: 15px 0px 0px 0px;
     font-weight: bold;
 }
 
-input[type="text"]{
+.FormContainer input[type="text"]{
     width: 15%;
 }
 
-textarea{
+.FormContainer textarea{
     width: 35%;
     height: 150px;
 }
 
-input[type=submit]{
+.FormContainer input[type=submit]{
     border: none;
     padding: 8px 15px 8px 15px;
     display: block;
