@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Navigator from './components/navigator';
 import ContentArea from './components/content-area';
 import './App.css';
-import portfolioItems from './services/portfolio-items.json';
+import portfolioItems from './portfolio-items.json';
 import _ from 'lodash';
 
 class App extends Component {
@@ -21,18 +21,19 @@ class App extends Component {
     this.onMenuChanged = this.onMenuChanged.bind(this);
     this.onEditPortfolioItem = this.onEditPortfolioItem.bind(this);
     this.onRemovePortfolioItem = this.onRemovePortfolioItem.bind(this);
-    this.onChangedProtfolioItem = this.onChangedProtfolioItem.bind(this);
+    this.onSavedProtfolioItem = this.onSavedProtfolioItem.bind(this);
   }
 
-  onMenuChanged(selectedMenuItemName) {
-    //alert('onMenuChanged');
+  onMenuChanged(event, selectedMenuItemName) {
+    event.preventDefault();
     this.setState({
       displayedMenuItemName: selectedMenuItemName,
       portfolioItemToEdit: {}
     });
   }
 
-  onEditPortfolioItem(idx, itemTitle, itemImageUrl, itemDescription) {
+  onEditPortfolioItem(event, idx, itemTitle, itemImageUrl, itemDescription) {
+    event.preventDefault();
     this.setState({
       displayedMenuItemName: 'Edit portfolio item',
       portfolioItemToEdit:
@@ -45,7 +46,8 @@ class App extends Component {
     });
   }
 
-  onRemovePortfolioItem(idx) {
+  onRemovePortfolioItem(event, idx) {
+    event.preventDefault();
     const positionItemToRemove = _.findIndex(this.state.portfolioItems, { id: idx });
     this.setState({
       portfolioItems: [...this.state.portfolioItems.slice(0, positionItemToRemove),
@@ -53,11 +55,9 @@ class App extends Component {
     });
   }
 
-  onChangedProtfolioItem(event, idx, itemTitle, itemImageUrl, itemDescription) {
+  onSavedProtfolioItem(event, idx, itemTitle, itemImageUrl, itemDescription) {
     event.preventDefault();
-    alert(idx);
     const positionItemToUpdate = _.findIndex(this.state.portfolioItems, { id: idx });
-    alert(positionItemToUpdate);
     const updatedItem = {...this.state.portfolioItems[positionItemToUpdate],
       title: itemTitle,
       imageUrl: itemImageUrl,
@@ -79,7 +79,7 @@ class App extends Component {
           displayedMenuItemName={this.state.displayedMenuItemName}
           onEditPortfolioItem={this.onEditPortfolioItem.bind(this)}
           onRemovePortfolioItem={this.onRemovePortfolioItem.bind(this)}
-          onChangedProtfolioItem={this.onChangedProtfolioItem.bind(this)}
+          onSavedProtfolioItem={this.onSavedProtfolioItem.bind(this)}
           id={this.state.portfolioItemToEdit.id}
           title={this.state.portfolioItemToEdit.title}
           imageUrl={this.state.portfolioItemToEdit.imageUrl}

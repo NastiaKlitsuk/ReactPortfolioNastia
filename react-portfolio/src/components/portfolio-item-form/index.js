@@ -15,6 +15,7 @@ class PortfolioItemForm extends Component {
     }
 
     onChange(event) {
+        event.preventDefault();
         const target = event.target;
         const name = target.name;
         const value = target.value;
@@ -23,7 +24,7 @@ class PortfolioItemForm extends Component {
 
     render() {
         return (
-            <form onSubmit={(event)=>{this.props.onChangedProtfolioItem(event,
+            <form onSubmit={(event)=>{this.props.onSavedProtfolioItem(event,
                                                               this.props.id,
                                                               this.state.title, 
                                                               this.state.imageUrl, 
@@ -50,7 +51,8 @@ class PortfolioItemForm extends Component {
 PortfolioItemForm.propTypes = {
     title: PropTypes.string.isRequired,
     description: PropTypes.string,
-    imageUrl: PropTypes.string.isRequired
+    imageUrl: PropTypes.string.isRequired,
+    onSavedProtfolioItem: PropTypes.func.isRequired
 }
 
 export default PortfolioItemForm;

@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 class MenuItem extends Component {
     render() {
         return (
-            <a onClick={()=> {this.props.onSelected(this.props.id)}}>
+            <a onClick={(event)=> {this.props.onMenuChanged(event, this.props.title)}}>
                 {this.props.title}
             </a>
         );
@@ -15,7 +15,7 @@ class MenuItem extends Component {
 MenuItem.propTypes = {
     id: PropTypes.number.isRequired,
     title: PropTypes.string.isRequired,
-    onSelected: PropTypes.func.isRequired
+    onMenuChanged: PropTypes.func.isRequired
 }
 
 export default MenuItem;
