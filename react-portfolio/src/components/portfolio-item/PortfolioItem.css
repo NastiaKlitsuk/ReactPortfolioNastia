@@ -11,10 +11,13 @@ h3{
     margin: 5px 2.5px 0px 2.5px;
 }
 
-.PortfolioImage{
-    padding: 25px;
+div > .PortfolioImage{
     width: 150px;
     height: 97px;
+}
+
+.PortfolioImage{
+    padding: 25px;
 }
 
 .Seperator {
@@ -29,8 +32,8 @@ h3{
     background-image: url("./images/trash.png");
     width: 30px;
     height: 30px;
-    bottom: -19px;
     display: none;
+    bottom: -22px;
 }
 
 .Edit{
@@ -41,7 +44,7 @@ h3{
     width: 30px;
     height: 30px;
     display: none;
-    bottom: 11px;
+    bottom: 8px;
     right: -31px;
 }
 

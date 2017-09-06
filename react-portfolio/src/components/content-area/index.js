@@ -4,6 +4,7 @@ import PortfolioController from '../portfolio-controller';
 import PortfolioItemForm from '../portfolio-item-form';
 import About from '../about';
 import './ContentArea.css';
+import PortfolioItemDisplay from '../portfolio-item-display';
 
 class ContentArea extends Component {
     constructor(props) {
@@ -15,7 +16,8 @@ class ContentArea extends Component {
         if (this.props.displayedMenuItemName === 'Portfolio') {
             view = <PortfolioController data={this.props.data}
                 onEditPortfolioItem={this.props.onEditPortfolioItem.bind(this)}
-                onRemovePortfolioItem={this.props.onRemovePortfolioItem.bind(this)} />;
+                onRemovePortfolioItem={this.props.onRemovePortfolioItem.bind(this)} 
+                onDisplayPortfolioItem={this.props.onDisplayPortfolioItem}/>;
         }
         else if ((this.props.displayedMenuItemName === 'Add new portfolio item') ||
             (this.props.displayedMenuItemName === 'Edit portfolio item')) {
@@ -27,6 +29,11 @@ class ContentArea extends Component {
         }
         else if (this.props.displayedMenuItemName === 'About') {
             view = <About />;
+        }
+        else if (this.props.displayedMenuItemName === 'Display Portfolio Item') {
+            view = <PortfolioItemDisplay title={this.props.title}
+                imageUrl={this.props.imageUrl}
+                description={this.props.description}  />;
         }
 
         return (

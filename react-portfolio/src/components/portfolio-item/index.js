@@ -2,25 +2,24 @@ import React, { Component } from 'react';
 import './PortfolioItem.css';
 import PropTypes from 'prop-types';
 
-class PortfolioItem extends Component {
-    render() {
-        return (
-            <div className="PortfolioItemContainer">
-                <div className="PortfolioImage">
-                    <img src={this.props.imageUrl}/>
-                </div>
-                <div className="Seperator" />
-                <h3>{this.props.title}</h3>
-                <button className="Remove" onClick={(event) => { this.props.onRemovePortfolioItem(event, this.props.id) }} />
-                <button className="Edit" onClick={(event) => {
-                    this.props.onEditPortfolioItem(event, this.props.id,
-                        this.props.title,
-                        this.props.imageUrl,
-                        this.props.description)
-                }} />
+const PortfolioItem = (props) => {
+    return (
+        <div className="PortfolioItemContainer"
+            onClick={(event) => { props.onDisplayPortfolioItem(event, props.title, props.imageUrl, props.description) }} >
+            <div className="PortfolioImage">
+                <img src={props.imageUrl} />
             </div>
-        );
-    }
+            <div className="Seperator" />
+            <h3>{props.title}</h3>
+            <button className="Remove" onClick={(event) => { props.onRemovePortfolioItem(event, props.id) }} />
+            <button className="Edit" onClick={(event) => {
+                props.onEditPortfolioItem(event, props.id,
+                    props.title,
+                    props.imageUrl,
+                    props.description)
+            }} />
+        </div>
+    );
 }
 
 PortfolioItem.propTypes = {
@@ -29,7 +28,8 @@ PortfolioItem.propTypes = {
     description: PropTypes.string,
     imageUrl: PropTypes.string.isRequired,
     onRemovePortfolioItem: PropTypes.func.isRequired,
-    onEditPortfolioItem: PropTypes.func.isRequired
+    onEditPortfolioItem: PropTypes.func.isRequired,
+    onDisplayPortfolioItem: PropTypes.func.isRequired
 }
 
 export default PortfolioItem;

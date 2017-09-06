@@ -12,7 +12,8 @@ class PortfolioController extends Component {
                         return <PortfolioItem key={idx} id={item.id} title={item.title} 
                                               description={item.description} imageUrl={item.imageUrl} 
                                               onEditPortfolioItem={this.props.onEditPortfolioItem.bind(this)}
-                                              onRemovePortfolioItem={this.props.onRemovePortfolioItem.bind(this)}/>
+                                              onRemovePortfolioItem={this.props.onRemovePortfolioItem.bind(this)}
+                                              onDisplayPortfolioItem={this.props.onDisplayPortfolioItem}/>
                     })
                 }
             </div>

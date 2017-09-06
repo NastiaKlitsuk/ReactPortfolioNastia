@@ -1,9 +1,9 @@
+import './App.css';
+import _ from 'lodash';
 import React, { Component } from 'react';
 import Navigator from './components/navigator';
 import ContentArea from './components/content-area';
-import './App.css';
 import portfolioItems from './portfolio-items.json';
-import _ from 'lodash';
 
 class App extends Component {
   constructor(props) {
@@ -22,6 +22,20 @@ class App extends Component {
     this.onEditPortfolioItem = this.onEditPortfolioItem.bind(this);
     this.onRemovePortfolioItem = this.onRemovePortfolioItem.bind(this);
     this.onSavedProtfolioItem = this.onSavedProtfolioItem.bind(this);
+    this.onDisplayPortfolioItem = this.onDisplayPortfolioItem.bind(this);
+  }
+
+  onDisplayPortfolioItem(event, itemTitle, itemImageUrl, itemDescription) {
+    event.preventDefault();
+    this.setState({
+      displayedMenuItemName: 'Display Portfolio Item',
+      portfolioItemToEdit:
+      {
+        title: itemTitle,
+        description: itemDescription,
+        imageUrl: itemImageUrl
+      }
+    });
   }
 
   onMenuChanged(event, selectedMenuItemName) {
@@ -39,6 +53,7 @@ class App extends Component {
 
   onEditPortfolioItem(event, idx, itemTitle, itemImageUrl, itemDescription) {
     event.preventDefault();
+    event.stopPropagation();
     this.setState({
       displayedMenuItemName: 'Edit portfolio item',
       portfolioItemToEdit:
@@ -53,6 +68,7 @@ class App extends Component {
 
   onRemovePortfolioItem(event, idx) {
     event.preventDefault();
+    event.stopPropagation();    
     const positionItemToRemove = _.findIndex(this.state.portfolioItems, { id: idx });
     this.setState({
       portfolioItems: [...this.state.portfolioItems.slice(0, positionItemToRemove),
@@ -100,6 +116,7 @@ class App extends Component {
           onEditPortfolioItem={this.onEditPortfolioItem.bind(this)}
           onRemovePortfolioItem={this.onRemovePortfolioItem.bind(this)}
           onSavedProtfolioItem={this.onSavedProtfolioItem.bind(this)}
+          onDisplayPortfolioItem={this.onDisplayPortfolioItem.bind(this)}
           id={this.state.portfolioItemToEdit.id}
           title={this.state.portfolioItemToEdit.title}
           imageUrl={this.state.portfolioItemToEdit.imageUrl}
