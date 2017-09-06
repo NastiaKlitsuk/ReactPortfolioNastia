@@ -6,7 +6,9 @@ class PortfolioItem extends Component {
     render() {
         return (
             <div className="PortfolioItemContainer">
-                <img className="PortfolioImage" src={this.props.imageUrl} />
+                <div className="PortfolioImage">
+                    <img src={this.props.imageUrl}/>
+                </div>
                 <div className="Seperator" />
                 <h3>{this.props.title}</h3>
                 <button className="Remove" onClick={(event) => { this.props.onRemovePortfolioItem(event, this.props.id) }} />
