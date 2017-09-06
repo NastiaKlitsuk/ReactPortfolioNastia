@@ -5,12 +5,20 @@ const About = () => {
     return (
         <div>
             <h1 className="AboutHeader">About me...</h1>
+            <p>
+                Love to travell with my family and enjoy the nature.
+                </p>
+            <p>
+                When daily stress is always there, there is no better place then
+                nature and see to calm and enjoy with my family.
+                </p>
+            <p>
+                Quite, no phones, family time:)
+            </p>
+
             <div>
-                Love to travell with my family and see amazing places,
-                    so this displays beutiful palces in Europe.
-                    When daily stress ia always there, there is no better place then
-                    beautiful nature and see to calm and enjoy with your family.
-                </div>
+                <img src="images/timetorelax.jpg" alt="Sorry, the source is unavailable." />
+            </div>
         </div>
     );
 }
