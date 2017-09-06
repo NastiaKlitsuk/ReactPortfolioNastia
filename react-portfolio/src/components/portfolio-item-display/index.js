@@ -1,14 +1,14 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './PortfolioItemDisplay.css';
 import PropTypes from 'prop-types';
 
 const PortfolioItemDisplay = (props) => {
     return (
         <div className="DisplayContainer">
-            <h4 className="DisplayContainer">{props.title}</h4>
-            <p>props.description</p>
-            <div className="PortfolioImage">
-                <img src={props.imageUrl} />
+            <h2 className="DispalyHeader">{props.title}</h2>
+            <p>{props.description}</p>
+            <div >
+                <img src={props.imageUrl} alt="Sorry, the source is unavailable."/>
             </div>
         </div>
     );

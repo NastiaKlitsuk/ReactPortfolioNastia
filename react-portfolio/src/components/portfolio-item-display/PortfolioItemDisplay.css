@@ -1,17 +1,16 @@
+.DisplayContainer{
+    margin-left: 15px;
+    width: 300px;
+}
+
+.DisplayContainer > p{
+    text-align: left;
+}
+
 .DispalyHeader{
     font-weight: bold;
     border-bottom: 2px solid #ddd;
     margin-bottom: 20px;
     font-size: 25px;
     padding-bottom: 3px;
-}
-
-.DisplayContainer{
-    padding: 50px;
-}
-
-.PortfolioImage{
-    padding: 25px;
-    width: 220px;
-    height: 142px;
 }

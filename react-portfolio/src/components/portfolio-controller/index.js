@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './PortfolioController.css';
 import PropTypes from 'prop-types';
 import PortfolioItem from '../portfolio-item';

@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React  from 'react';
 import Share from '../share';
 import './Navigator.css';
 import Menu from '../menu';

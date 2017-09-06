@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './PortfolioItem.css';
 import PropTypes from 'prop-types';
 
@@ -7,7 +7,7 @@ const PortfolioItem = (props) => {
         <div className="PortfolioItemContainer"
             onClick={(event) => { props.onDisplayPortfolioItem(event, props.title, props.imageUrl, props.description) }} >
             <div className="PortfolioImage">
-                <img src={props.imageUrl} />
+                <img src={props.imageUrl} alt="Sorry, the source is unavailable." />
             </div>
             <div className="Seperator" />
             <h3>{props.title}</h3>
