@@ -1,3 +1,9 @@
-const PortfolioMenu = 'Portfolio';
-const AddNewPortfolioMenu = 'Add new portfolio item';
-const AboutMenu = 'About';
+const Consts = {
+    ProtfolioMenu: "Portfolio",
+    AddNewProtfolioItemMenu: "Add new portfolio item",
+    EditProtfolioItem: "Edit portfolio item",
+    AboutMenu: "About",
+    DisplayProtfolioItem: "Display Portfolio Item"
+}
+
+export default Consts;

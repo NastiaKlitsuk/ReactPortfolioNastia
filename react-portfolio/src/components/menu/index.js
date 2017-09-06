@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './Menu.css';
+import Consts from '../../consts.js';
 import MenuItem from '../menu-item';
 
 class Menu extends Component {
@@ -7,9 +8,9 @@ class Menu extends Component {
         super(props);
         this.state = {
             menuItems: [
-                { title: "Portfolio", id: 1 },
-                { title: "Add new portfolio item", id: 2 },
-                { title: "About", id: 3 }
+                { title: Consts.ProtfolioMenu, id: 1 },
+                { title: Consts.AddNewProtfolioItemMenu, id: 2 },
+                { title: Consts.AboutMenu, id: 3 }
             ]
         }
     }

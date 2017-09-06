@@ -1,5 +1,6 @@
 import './App.css';
 import _ from 'lodash';
+import Consts from './consts.js';
 import React, { Component } from 'react';
 import Navigator from './components/navigator';
 import ContentArea from './components/content-area';
@@ -9,7 +10,7 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      displayedMenuItemName: 'Portfolio',
+      displayedMenuItemName: Consts.ProtfolioMenu,
       portfolioItemToEdit: {
         id: -1,
         title: '',
@@ -29,7 +30,7 @@ class App extends Component {
   onDisplayPortfolioItem(event, idx, itemTitle, itemImageUrl, itemDescription) {
     event.preventDefault();
     this.setState({
-      displayedMenuItemName: 'Display Portfolio Item',
+      displayedMenuItemName: Consts.DisplayProtfolioItem,
       portfolioItemToEdit:
       {
         id: idx,
@@ -42,7 +43,7 @@ class App extends Component {
 
   onPortfolioItemDisplayClosed() {
     this.setState({
-      displayedMenuItemName: 'Portfolio',
+      displayedMenuItemName: Consts.ProtfolioMenu,
       portfolioItemToEdit:
       {
         id: -1,
@@ -70,7 +71,7 @@ class App extends Component {
     event.preventDefault();
     event.stopPropagation();
     this.setState({
-      displayedMenuItemName: 'Edit portfolio item',
+      displayedMenuItemName: Consts.EditProtfolioItem,
       portfolioItemToEdit:
       {
         id: idx,
@@ -117,7 +118,7 @@ class App extends Component {
     }
 
     this.setState({
-      displayedMenuItemName: 'Portfolio',
+      displayedMenuItemName: Consts.ProtfolioMenu,
       portfolioItems: newPortfolioItems,
       portfolioItemToEdit: {
         id: -1,
