@@ -17,11 +17,8 @@ class ContentArea extends Component {
                 onEditPortfolioItem={this.props.onEditPortfolioItem.bind(this)}
                 onRemovePortfolioItem={this.props.onRemovePortfolioItem.bind(this)} />;
         }
-        else if (this.props.displayedMenuItemName === 'Add new portfolio item') {
-            view = <PortfolioItemForm title='' imageUrl='' description=''
-                onSavedProtfolioItem={this.props.onSavedProtfolioItem.bind(this)} />;
-        }
-        else if (this.props.displayedMenuItemName === 'Edit portfolio item') {
+        else if ((this.props.displayedMenuItemName === 'Add new portfolio item') ||
+            (this.props.displayedMenuItemName === 'Edit portfolio item')) {
             view = <PortfolioItemForm id={this.props.id}
                 title={this.props.title}
                 imageUrl={this.props.imageUrl}

@@ -28,7 +28,12 @@ class App extends Component {
     event.preventDefault();
     this.setState({
       displayedMenuItemName: selectedMenuItemName,
-      portfolioItemToEdit: {}
+      portfolioItemToEdit: {
+        id: -1,
+        title: '',
+        description: '',
+        imageUrl: ''
+      },
     });
   }
 
@@ -57,14 +62,29 @@ class App extends Component {
 
   onSavedProtfolioItem(event, idx, itemTitle, itemImageUrl, itemDescription) {
     event.preventDefault();
-    const positionItemToUpdate = _.findIndex(this.state.portfolioItems, { id: idx });
-    const updatedItem = {...this.state.portfolioItems[positionItemToUpdate],
-      title: itemTitle,
-      imageUrl: itemImageUrl,
-      description: itemDescription
-    };
-    let newPortfolioItems = [...this.state.portfolioItems.slice(0, positionItemToUpdate), updatedItem,
+    let newPortfolioItems = {};
+    if (idx !== -1) {
+      const positionItemToUpdate = _.findIndex(this.state.portfolioItems, { id: idx });
+      const updatedItem = {
+        ...this.state.portfolioItems[positionItemToUpdate],
+        title: itemTitle,
+        imageUrl: itemImageUrl,
+        description: itemDescription
+      };
+      newPortfolioItems = [...this.state.portfolioItems.slice(0, positionItemToUpdate), updatedItem,
       ...this.state.portfolioItems.slice(positionItemToUpdate + 1)];
+    }
+    else {
+      let newItemIndex = this.state.portfolioItems.count + 1;
+      let newItem = {
+        id: newItemIndex,
+        title: itemTitle,
+        description: itemDescription,
+        imageUrl: itemImageUrl
+      };
+      newPortfolioItems = [...this.state.portfolioItems, newItem];
+    }
+
     this.setState({
       displayedMenuItemName: 'Portfolio',
       portfolioItems: newPortfolioItems
