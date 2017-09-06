@@ -33,10 +33,10 @@ class PortfolioItemForm extends Component {
                 <div className="FormHeader">Insert new protfolio details</div>
 
                 <label htmlFor="title">Title:</label>
-                <input id="title" name="title" type="text" value={this.state.title} onChange={this.onChange} />
+                <input id="title" name="title" type="text" value={this.state.title} onChange={this.onChange} required/>
 
                 <label htmlFor="imageUrl">Image Url:</label>
-                <input id="imageUrl" name="imageUrl" type="text" value={this.state.imageUrl} onChange={this.onChange} />
+                <input id="imageUrl" name="imageUrl" type="text" value={this.state.imageUrl} onChange={this.onChange} required/>
 
                 <label>Description:</label>
                 <textarea  name="description" defaultValue={this.state.description} onChange={this.onChange} />

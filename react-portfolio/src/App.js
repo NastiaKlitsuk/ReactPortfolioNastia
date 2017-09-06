@@ -25,12 +25,13 @@ class App extends Component {
     this.onDisplayPortfolioItem = this.onDisplayPortfolioItem.bind(this);
   }
 
-  onDisplayPortfolioItem(event, itemTitle, itemImageUrl, itemDescription) {
+  onDisplayPortfolioItem(event, idx, itemTitle, itemImageUrl, itemDescription) {
     event.preventDefault();
     this.setState({
       displayedMenuItemName: 'Display Portfolio Item',
       portfolioItemToEdit:
       {
+        id: idx,
         title: itemTitle,
         description: itemDescription,
         imageUrl: itemImageUrl

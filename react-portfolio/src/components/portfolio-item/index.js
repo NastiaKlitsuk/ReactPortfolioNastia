@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 const PortfolioItem = (props) => {
     return (
         <div className="PortfolioItemContainer"
-            onClick={(event) => { props.onDisplayPortfolioItem(event, props.title, props.imageUrl, props.description) }} >
+            onClick={(event) => { props.onDisplayPortfolioItem(event, props.id, props.title, props.imageUrl, props.description) }} >
             <div className="PortfolioImage">
                 <img src={props.imageUrl} alt="Sorry, the source is unavailable." />
             </div>
